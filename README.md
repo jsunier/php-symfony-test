@@ -1,6 +1,6 @@
 # jsunier/php-symfony-test
 
-Docker image to run PHPUnit with Symfony on PHP7.1.
+Docker image to run PHPUnit with Symfony on PHP7.1/PHP7.2.
 
 The image is published on the [Docker Hub](https://hub.docker.com) at this address : https://hub.docker.com/r/jsunier/php-symfony-test.
 
@@ -10,7 +10,7 @@ This image contains multiple versions available for testing your code with PHPUn
 
 ## Informations
 
-For now, there is only two available database adapters for he available PHP versions:
+For now, there is only two available database adapters for the available PHP versions:
 
 * PostgreSQL
 * MySQL/MariaDB
@@ -26,6 +26,12 @@ List of PHP extensions installed:
 * bcmath
 * pdo
 * imagick
+
+### Architectures available
+
+Images are compiled for these architectures:
+
+* `amd64`
 
 ## PHP7.1
 
