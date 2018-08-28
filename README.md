@@ -26,6 +26,7 @@ List of PHP extensions installed:
 * bcmath
 * pdo
 * imagick
+* xdebug (2.6.1)
 
 ### Architectures available
 
@@ -57,7 +58,7 @@ Use `jsunier/php-symfony-test:7.1-mysql` or `jsunier/php-symfony-test:7.1-mariad
 
 To build these images, just go into the folder of you choice and run `docker build . -t <your-image-name:your-tag>`.
 
-Example: 
+Example:
 ```
 # cd php7.1/postgresql
 # docker build . -t my-awesome-phpunit-image
