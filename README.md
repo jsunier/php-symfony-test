@@ -26,6 +26,7 @@ List of PHP extensions installed:
 * bcmath
 * pdo
 * imagick
+* sockets
 * xdebug (2.6.1)
 
 ### Architectures available
