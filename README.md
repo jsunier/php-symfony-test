@@ -2,9 +2,20 @@
 
 Docker image to run PHPUnit with Symfony 3.x/4.x on PHP `7.1`/`7.2`/`7.3`.
 
+Docker container allowing you to build and test your PHP projects.
+
+## Supported tags and respective `Dockerfile` links
+
+- `php7.3-mysql`, `php7.3-mariadb`, `latest`, `latest-mysql` ([7.3/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/mysql/Dockerfile))
+- `php7.2-mysql`, `php7.2-mariadb` ([php7.2/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.2/mysql/Dockerfile))
+- `php7.1-mysql`, `php7.1-mariadb` ([php7.1/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.1/mysql/Dockerfile))
+- `php7.3-postgresql`, `latest-postgresql` ([php7.3/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/postgresql/Dockerfile))
+- `php7.2-postgresql` ([php7.2/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.2/postgresql/Dockerfile))
+- `php7.1-postgresql` ([php7.1/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.1/postgresql/Dockerfile))
+
 This image is published on the [Docker Hub](https://hub.docker.com) at this address : https://hub.docker.com/r/jsunier/php-symfony-test.
 
-All the dockerfiles are available on [Gtihub](https://github.com/jsunier/php-symfony-test).
+All the dockerfiles are available on [Github](https://github.com/jsunier/php-symfony-test).
 
 This image contains multiple versions available for testing your code with PHPUnit and Symfony.
 
@@ -18,6 +29,8 @@ For now, there is only two available database adapters for the available PHP ver
 * MySQL/MariaDB
 
 Every images include the latest version of [composer](https://getcomposer.org) installed at `/usr/local/bin/composer`.
+
+Composer is installed with [hirak/prestissimo](https://packagist.org/packages/hirak/prestissimo) to speed up packages installation.
 
 List of PHP extensions installed:
 
@@ -54,36 +67,6 @@ Images are compiled for these architectures:
 
 * `amd64`
 
-## PHP7.1
-
-### PostgreSQL
-
-Use `jsunier/php-symfony-test:7.1-postgresql`
-
-### MySQL/MariaDB
-
-Use `jsunier/php-symfony-test:7.1-mysql` or `jsunier/php-symfony-test:7.1-mariadb`
-
-## PHP7.2
-
-### PostgreSQL
-
-Use `jsunier/php-symfony-test:7.2-postgresql`
-
-### MySQL/MariaDB
-
-Use `jsunier/php-symfony-test:7.2-mysql` or `jsunier/php-symfony-test:7.2-mariadb`
-
-## PHP7.3
-
-### PostgreSQL
-
-Use `jsunier/php-symfony-test:7.3-postgresql`
-
-### MySQL/MariaDB
-
-Use `jsunier/php-symfony-test:7.3-mysql` or `jsunier/php-symfony-test:7.3-mariadb`
-
 # Build
 
 ## All at once
@@ -93,6 +76,10 @@ There is a `Makefile` available to simplify the creation of theses images.
 You can change the values inside this file to set your custom repository, folders, tags, etc.
 
 > You need to have `make` installed (`sudo apt install make`)
+
+```
+$ make all
+```
 
 ### Build images with MySQL/MariaDB support
 
