@@ -46,7 +46,8 @@ List of PHP extensions installed:
 | `imagick`                                               |   ✅   |   ✅   |   ✅   |
 | `sockets`                                               |   ✅   |   ✅   |   ✅   |
 | `xdebug` (2.6.1 for PHP 7.1 and 7.2 / 2.7.1 for PHP 7.3)|   ✅   |   ✅   |   ✅   |
-| `gd`                                                    |   ❌   |   ❌   |   ❌   |
+| `gd`                                                    |   ✅   |   ✅   |   ✅   |
+| `soap`                                                  |   ✅   |   ✅   |   ✅   |
 | `mcrypt`                                                |   ❌   |   ❌   |   ❌   |
 | `oci8`                                                  |   ❌   |   ❌   |   ❌   |
 | `redis`                                                 |   ❌   |   ❌   |   ❌   |

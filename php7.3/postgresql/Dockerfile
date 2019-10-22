@@ -9,9 +9,10 @@ LABEL maintainer="Joël Sunier <jsunier@stogon.io>" \
     org.label-schema.build-date=${BUILD_DATE}
 
 RUN apt-get update && apt-get install -yqq git curl libmcrypt-dev libjpeg-dev libpng-dev libfreetype6-dev libbz2-dev libxml2-dev libmagickwand-dev libpq-dev libzip-dev unzip && \
-    docker-php-ext-install mbstring pdo_pgsql zip iconv opcache bcmath sockets && \
+    docker-php-ext-install mbstring pdo_pgsql zip iconv opcache bcmath sockets soap && \
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && \
-    docker-php-ext-install pdo pdo_pgsql pgsql && \
+    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+    docker-php-ext-install pdo pdo_pgsql pgsql gd && \
     pecl install imagick xdebug-2.7.1 && \
     docker-php-ext-enable imagick xdebug && \
     apt-get clean
