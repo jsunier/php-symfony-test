@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -yqq git curl libmcrypt-dev libjpeg-dev li
     docker-php-ext-enable imagick xdebug && \
     apt-get clean
 
+COPY php.ini $PHP_INI_DIR/php.ini
+
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /app
