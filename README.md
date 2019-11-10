@@ -6,7 +6,7 @@ Docker container allowing you to build and test your PHP projects.
 
 ## Supported tags and respective `Dockerfile` links
 
-- `php7.3-mysql`, `php7.3-mariadb`, `latest`, `latest-mysql` ([7.3/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/mysql/Dockerfile))
+- `php7.3-mysql`, `php7.3-mariadb`, `latest`, `latest-mysql` ([php7.3/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/mysql/Dockerfile))
 - `php7.2-mysql`, `php7.2-mariadb` ([php7.2/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.2/mysql/Dockerfile))
 - `php7.1-mysql`, `php7.1-mariadb` ([php7.1/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.1/mysql/Dockerfile))
 - `php7.3-postgresql`, `latest-postgresql` ([php7.3/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/postgresql/Dockerfile))
