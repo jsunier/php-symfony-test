@@ -1,8 +1,8 @@
 REPOSITORY?=jsunier/php-symfony-test
 BUILD_DATE="$(shell date -u +"%Y-%m-%dT%H:%m:%SZ")"
 PRESTISSIMO_VERSION=0.3.9
-VERSIONS=7.3 7.2 7.1
-LATEST_VERSION=7.3
+VERSIONS=7.4 7.3 7.2 7.1
+LATEST_VERSION=7.4
 
 build-mysql:
 	for VERSION in $(VERSIONS); do \

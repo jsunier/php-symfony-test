@@ -1,15 +1,17 @@
 # jsunier/php-symfony-test
 
-Docker image to run PHPUnit with Symfony 3.x/4.x on PHP `7.1`/`7.2`/`7.3`.
+Docker image to run PHPUnit with Symfony 3.x/4.x on PHP `7.1`/`7.2`/`7.3`/`7.4`.
 
 Docker container allowing you to build and test your PHP projects.
 
 ## Supported tags and respective `Dockerfile` links
 
-- `php7.3-mysql`, `php7.3-mariadb`, `latest`, `latest-mysql` ([php7.3/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/mysql/Dockerfile))
+- `php7.4-mysql`, `php7.4-mariadb`, `latest`, `latest-mysql` ([php7.4/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.4/mysql/Dockerfile))
+- `php7.3-mysql`, `php7.3-mariadb`, ([php7.3/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/mysql/Dockerfile))
 - `php7.2-mysql`, `php7.2-mariadb` ([php7.2/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.2/mysql/Dockerfile))
 - `php7.1-mysql`, `php7.1-mariadb` ([php7.1/mysql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.1/mysql/Dockerfile))
-- `php7.3-postgresql`, `latest-postgresql` ([php7.3/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/postgresql/Dockerfile))
+- `php7.4-postgresql`, `latest-postgresql` ([php7.3/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/postgresql/Dockerfile))
+- `php7.3-postgresql` ([php7.3/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.3/postgresql/Dockerfile))
 - `php7.2-postgresql` ([php7.2/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.2/postgresql/Dockerfile))
 - `php7.1-postgresql` ([php7.1/postgresql/Dockerfile](https://github.com/jsunier/php-symfony-test/blob/master/php7.1/postgresql/Dockerfile))
 
@@ -34,23 +36,23 @@ Composer is installed with [hirak/prestissimo](https://packagist.org/packages/hi
 
 List of PHP extensions installed:
 
-| Extension / PHP version                                 |  7.1  |  7.2  |  7.3  |
-| ------------------------------------------------------- | :---: | :---: | :---: |
-| `mbstring`                                              |   ✅   |   ✅   |   ✅   |
-| `zip`                                                   |   ✅   |   ✅   |   ✅   |
-| `iconv`                                                 |   ✅   |   ✅   |   ✅   |
-| `opcache`                                               |   ✅   |   ✅   |   ✅   |
-| `bcmath`                                                |   ✅   |   ✅   |   ✅   |
-| `pdo_mysql` (mysql/mariadb) / `pdo_pgsql` (postgresql)  |   ✅   |   ✅   |   ✅   |
-| `pdo`                                                   |   ✅   |   ✅   |   ✅   |
-| `imagick`                                               |   ✅   |   ✅   |   ✅   |
-| `sockets`                                               |   ✅   |   ✅   |   ✅   |
-| `xdebug` (2.6.1 for PHP 7.1 and 7.2 / 2.7.1 for PHP 7.3)|   ✅   |   ✅   |   ✅   |
-| `gd`                                                    |   ✅   |   ✅   |   ✅   |
-| `soap`                                                  |   ✅   |   ✅   |   ✅   |
-| `mcrypt`                                                |   ❌   |   ❌   |   ❌   |
-| `oci8`                                                  |   ❌   |   ❌   |   ❌   |
-| `redis`                                                 |   ❌   |   ❌   |   ❌   |
+| Extension / PHP version                                                      | 7.1 | 7.2 | 7.3 | 7.4 |
+|------------------------------------------------------------------------------|-----|-----|-----|-----|
+| `mbstring`                                                                   | ✅   | ✅   | ✅   | ✅   |
+| `zip`                                                                        | ✅   | ✅   | ✅   | ✅   |
+| `iconv`                                                                      | ✅   | ✅   | ✅   | ✅   |
+| `opcache`                                                                    | ✅   | ✅   | ✅   | ✅   |
+| `bcmath`                                                                     | ✅   | ✅   | ✅   | ✅   |
+| `pdo_mysql` (mysql/mariadb) / `pdo_pgsql` (postgresql)                       | ✅   | ✅   | ✅   | ✅   |
+| `pdo`                                                                        | ✅   | ✅   | ✅   | ✅   |
+| `imagick`                                                                    | ✅   | ✅   | ✅   | ✅   |
+| `sockets`                                                                    | ✅   | ✅   | ✅   | ✅   |
+| `xdebug` (2.6.1 for PHP 7.1 and 7.2 / 2.7.1 for PHP 7.3 / 2.9.0 for PHP 7.4) | ✅   | ✅   | ✅   | ✅   |
+| `gd`                                                                         | ✅   | ✅   | ✅   | ✅   |
+| `soap`                                                                       | ✅   | ✅   | ✅   | ✅   |
+| `mcrypt`                                                                     | ❌   | ❌   | ❌   | ❌   |
+| `oci8`                                                                       | ❌   | ❌   | ❌   | ❌   |
+| `redis`                                                                      | ❌   | ❌   | ❌   | ❌   |
 
 # Default configurations
 
@@ -102,6 +104,6 @@ To build these images, just go into the folder of you choice and run `docker bui
 
 Example:
 ```
-# cd php7.1/mysql
+# cd php7.4/mysql
 # docker build . -t my-awesome-phpunit-image
 ```
