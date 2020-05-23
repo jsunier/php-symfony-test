@@ -18,7 +18,7 @@ build-postgresql:
 	done
 	docker build php${LATEST_VERSION}/postgresql --build-arg PRESTISSIMO_VERSION=$$PRESTISSIMO_VERSION --build-arg BUILD_DATE=$$BUILD_DATE -t $(REPOSITORY):latest-postgresql
 
-.PHONY: push-myswl
+.PHONY: push-mysql
 push-mysql:
 	for VERSION in $(VERSIONS); do \
 		docker push $(REPOSITORY):php$$VERSION-mysql; \
