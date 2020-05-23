@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -yqq git curl libmcrypt-dev libjpeg-dev li
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-webp-dir=/usr/include/ && \
     docker-php-ext-install pdo pdo_pgsql pgsql gd && \
-    pecl install imagick xdebug-2.6.1 && \
-    docker-php-ext-enable imagick xdebug && \
+    pecl install imagick xdebug-2.6.1 redis && \
+    docker-php-ext-enable imagick xdebug redis && \
     apt-get clean
 
 COPY php.ini $PHP_INI_DIR/php.ini

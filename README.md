@@ -1,6 +1,6 @@
 # jsunier/php-symfony-test
 
-Docker image to run PHPUnit with Symfony 3.x/4.x on PHP `7.1`/`7.2`/`7.3`/`7.4`.
+Docker image to run PHPUnit with Symfony 3.x/4.x/5.x on PHP `7.1`/`7.2`/`7.3`/`7.4`.
 
 Docker container allowing you to build and test your PHP projects.
 
@@ -52,7 +52,7 @@ List of PHP extensions installed:
 | `soap`                                                                       | ✅   | ✅   | ✅   | ✅   |
 | `mcrypt`                                                                     | ❌   | ❌   | ❌   | ❌   |
 | `oci8`                                                                       | ❌   | ❌   | ❌   | ❌   |
-| `redis`                                                                      | ❌   | ❌   | ❌   | ❌   |
+| `redis`                                                                      | ✅   | ✅   | ✅   | ✅   |
 
 # Default configurations
 
