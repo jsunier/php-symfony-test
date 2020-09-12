@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for `webp` images with GD extension in all versions
 
 ### Changes
-- Upgraded `hirak/prestissimo` to `0.3.10`
+- Upgraded [hirak/prestissimo](https://packagist.org/packages/hirak/prestissimo) to `0.3.10`
 
 ### Fixed
 - Missing `.PHONY:` directives in `Makefile`
