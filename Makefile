@@ -18,6 +18,13 @@ build-postgresql:
 	done
 	docker build php${LATEST_VERSION}/postgresql --build-arg PRESTISSIMO_VERSION=$$PRESTISSIMO_VERSION --build-arg BUILD_DATE=$$BUILD_DATE -t $(REPOSITORY):latest-postgresql
 
+.PHONY: pull-php
+pull-php:
+	for VERSION in $(VERSIONS); do \
+		docker pull php:$$VERSION-cli; \
+	done
+	docker pull php:latest
+
 .PHONY: push-mysql
 push-mysql:
 	for VERSION in $(VERSIONS); do \
