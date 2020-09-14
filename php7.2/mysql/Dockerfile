@@ -30,6 +30,9 @@ RUN groupadd --gid 1000 symfony \
 RUN chmod -R a+wrx /app
 RUN chmod  a+wrx /usr/local/bin/composer
 
+# Fix Imagick rights for PDF
+RUN rm /etc/ImageMagick-6/policy.xml
+
 VOLUME [ "/app" ]
 
 USER symfony

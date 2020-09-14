@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.4] - 2020-09-14
+### Fixed
+- Fixed `ImagickException: attempt to perform an operation not allowed by the security policy 'PDF' @ error/constitute.c/IsCoderAuthorized/408` error when trying to read a PDF with Imagick extension.
+
 ## [1.2.3] - 2020-06-28
 ### Added
 - Added `CHANGELOG.md`
