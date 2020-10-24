@@ -80,7 +80,9 @@ If you used `apt-get ...` or something that require `root` privileges before thi
 - Added a default volume (`/app`)
 - Added a CMD directive on all images (default to `/app/bin/console`)
 
-[Unreleased]: https://github.com/jsunier/php-symfony-test/compare/v1.2.3...HEAD
+[Unreleased]: https://github.com/jsunier/php-symfony-test/compare/v1.2.5...HEAD
+[1.2.5]: https://github.com/jsunier/php-symfony-test/compare/v1.2.4...v1.2.5
+[1.2.4]: https://github.com/jsunier/php-symfony-test/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/jsunier/php-symfony-test/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/jsunier/php-symfony-test/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/jsunier/php-symfony-test/compare/v1.2.0...v1.2.1
