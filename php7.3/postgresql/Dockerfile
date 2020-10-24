@@ -1,25 +1,30 @@
+ARG COMPOSER_VERSION=latest
+
+FROM composer:${COMPOSER_VERSION} as composer_image
+
 FROM php:7.3-cli
 
 ARG BUILD_DATE
-ARG PRESTISSIMO_VERSION
+ARG PRESTISSIMO_VERSION=0.3.10
+ARG XDEBUG_VERSION=2.9.8
 
 LABEL maintainer="Joël Sunier <jsunier@stogon.io>" \
     php.version="7.3" \
     php.pdo_connector="PostgreSQL" \
+    php.xdebug_version=${XDEBUG_VERSION} \
     org.label-schema.build-date=${BUILD_DATE}
 
 RUN apt-get update && apt-get install -yqq git curl libmcrypt-dev libjpeg-dev libpng-dev libfreetype6-dev libbz2-dev libxml2-dev libmagickwand-dev libpq-dev libzip-dev libwebp-dev unzip && \
-    docker-php-ext-install mbstring pdo_pgsql zip iconv opcache bcmath sockets soap && \
+    docker-php-ext-install zip opcache bcmath sockets soap && \
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-webp-dir=/usr/include/ && \
-    docker-php-ext-install pdo pdo_pgsql pgsql gd && \
-    pecl install imagick xdebug-2.7.1 redis && \
+    docker-php-ext-install pdo_pgsql pgsql gd && \
+    pecl install imagick xdebug-${XDEBUG_VERSION} redis && \
     docker-php-ext-enable imagick xdebug redis && \
     apt-get clean
 
 COPY php.ini $PHP_INI_DIR/php.ini
-
-RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer_image /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
@@ -29,7 +34,7 @@ RUN groupadd --gid 1000 symfony \
 
 # Fix permissions issues
 RUN chmod -R a+wrx /app
-RUN chmod  a+wrx /usr/local/bin/composer
+RUN chmod  a+wrx /usr/bin/composer
 
 # Fix Imagick rights for PDF
 RUN rm /etc/ImageMagick-6/policy.xml
@@ -37,6 +42,6 @@ RUN rm /etc/ImageMagick-6/policy.xml
 VOLUME [ "/app" ]
 
 USER symfony
-RUN composer global require --no-interaction --no-progress hirak/prestissimo:0.3.10
+RUN composer global require --no-interaction --no-progress hirak/prestissimo:$PRESTISSIMO_VERSION
 
 CMD [ "/app/bin/console" ]

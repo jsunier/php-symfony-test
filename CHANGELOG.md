@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.5] - 2020-10-24
+### Added
+- Added `COMPOSER_VERSION` argument in all `Dockerfile` to specify which composer version to install (default to `latest` in Dockerfile, `1` in `Makefile`)
+- Added `XDEBUG_VERSION` argument in all `Dockerfile` to specify which version of `xdebug` to install
+
+### Changes
+- Changed the way composer is installed in images by using `COPY --from=composer:${COMPOSER_VERSION} /usr/bin/composer /usr/bin/composer`
+- Changed path of composer executable from `/usr/local/bin/composer` to `/usr/bin/composer`
+
+### Fixed
+- Fixed unused `PRESTISSIMO_VERSION` argument during build
+- Removed `docker-php-ext-install` instruction for already installed extensions (like `pdo`, `iconv`, `mbstring`)
+
 ## [1.2.4] - 2020-09-14
 ### Fixed
 - Fixed `ImagickException: attempt to perform an operation not allowed by the security policy 'PDF' @ error/constitute.c/IsCoderAuthorized/408` error when trying to read a PDF with Imagick extension.

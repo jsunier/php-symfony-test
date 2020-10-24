@@ -32,7 +32,7 @@ For now, there is only two available database adapters for the available PHP ver
 
 Every images include the latest version of [composer](https://getcomposer.org) installed at `/usr/local/bin/composer`.
 
-Composer is installed with [hirak/prestissimo](https://packagist.org/packages/hirak/prestissimo) to speed up packages installation.
+Composer is installed with [hirak/prestissimo](https://packagist.org/packages/hirak/prestissimo) plugin to speed up packages installation.
 
 List of PHP extensions installed:
 
@@ -54,6 +54,14 @@ List of PHP extensions installed:
 | `oci8`                                                                       | ❌   | ❌   | ❌   | ❌   |
 | `redis`                                                                      | ✅   | ✅   | ✅   | ✅   |
 
+## Examples
+
+### Docker run
+
+```
+$ docker run -it -v $(pwd):/app jsunier/php-symfony-test:php7.4-mysql /bin/bash
+```
+
 # Default configurations
 
 Default value in Dockerfile's directives:
@@ -72,16 +80,28 @@ Images are compiled for these architectures:
 
 # Build
 
-## All at once
-
 There is a `Makefile` available to simplify the creation of theses images.
 
 You can change the values inside this file to set your custom repository, folders, tags, etc.
 
 > You need to have `make` installed (`sudo apt install make`)
 
+## Pull all latest source images
+
+```
+$ make pull-php
+```
+
+## All at once
+
 ```
 $ make all
+```
+
+### Build all (mysql/postgresql)
+
+```
+$ make build
 ```
 
 ### Build images with MySQL/MariaDB support
