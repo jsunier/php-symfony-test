@@ -31,6 +31,10 @@ WORKDIR /app
 RUN groupadd --gid 1000 symfony \
   && useradd --uid 1000 --gid symfony --shell /bin/bash --create-home symfony
 
+# Install the Symfony CLI
+RUN curl -sS https://get.symfony.com/cli/installer | bash && \
+  mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+
 # Fix permissions issues
 RUN chmod -R a+wrx /app
 RUN chmod  a+wrx /usr/bin/composer
