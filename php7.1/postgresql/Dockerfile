@@ -5,7 +5,6 @@ FROM composer:${COMPOSER_VERSION} as composer_image
 FROM php:7.1-cli
 
 ARG BUILD_DATE
-ARG PRESTISSIMO_VERSION=0.3.10
 ARG XDEBUG_VERSION=2.6.1
 
 LABEL maintainer="Joël Sunier <jsunier@stogon.io>" \
@@ -46,6 +45,5 @@ RUN rm /etc/ImageMagick-6/policy.xml
 VOLUME [ "/app" ]
 
 USER symfony
-RUN composer global require --no-interaction --no-progress hirak/prestissimo:$PRESTISSIMO_VERSION
 
 CMD [ "/app/bin/console" ]

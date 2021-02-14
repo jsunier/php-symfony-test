@@ -32,8 +32,6 @@ For now, there is only two available database adapters for the available PHP ver
 
 Every images include the latest version of [composer](https://getcomposer.org) installed at `/usr/bin/composer` and the latest version of the [Symfony CLI](https://symfony.com/download) installed at `/usr/local/bin/symfony`.
 
-Composer is installed with [hirak/prestissimo](https://packagist.org/packages/hirak/prestissimo) plugin to speed up packages installation.
-
 List of PHP extensions installed:
 
 | Extension / PHP version                                                      | 7.1 | 7.2 | 7.3 | 7.4 |
