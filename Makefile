@@ -1,8 +1,8 @@
 REPOSITORY?=jsunier/php-symfony-test
 BUILD_DATE="$(shell date -u +"%Y-%m-%dT%H:%m:%SZ")"
 COMPOSER_VERSION=2
-VERSIONS=7.4 7.3 7.2 7.1
-LATEST_VERSION=7.4
+VERSIONS=8.0 7.4 7.3 7.2 7.1
+LATEST_VERSION=8.0
 
 .PHONY: build
 build: build-mysql build-postgresql
