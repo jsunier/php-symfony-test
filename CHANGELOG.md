@@ -94,6 +94,7 @@ If you used `apt-get ...` or something that require `root` privileges before thi
 - Added a CMD directive on all images (default to `/app/bin/console`)
 
 [Unreleased]: https://github.com/jsunier/php-symfony-test/compare/v1.3.0...HEAD
+[1.3.1]: https://github.com/jsunier/php-symfony-test/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/jsunier/php-symfony-test/compare/v1.2.6...v1.3.0
 [1.2.6]: https://github.com/jsunier/php-symfony-test/compare/v1.2.5...v1.2.6
 [1.2.5]: https://github.com/jsunier/php-symfony-test/compare/v1.2.4...v1.2.5
